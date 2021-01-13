@@ -1,7 +1,7 @@
 # Man In The Middle
 This repository contains a Linux shell script to redirect LAN traffic to the local machine. This is known as a Man In The Middle attack and consists of poisoning the ARP tables with false information to fool the two machines.
 
-IMPORTANT: This script is for educational purposes only.
+**IMPORTANT: This script is for educational purposes only and the owners of the affected IP addresses must authorize the redirection of traffic through their computer.**
 
 ## 1. Set up
 
@@ -40,7 +40,7 @@ The target IP address it can be obtained by a LAN analyser or nmap package. If y
 sudo apt-get install nmap
 ```
 
-<img src="https://versprite.com/wp-content/uploads/2017/12/MiTM-Attack.png" style="margin: 1em 0em; border-radius: 1em">
+<img src="https://versprite.com/wp-content/uploads/2017/12/MiTM-Attack.png">
 
 In this example our IP address is 10.5.0.135 and the interface name is wlan0. The targets are 10.5.0.180 and 10.5.0.190. Finally we put all this information as script arguments.
 
@@ -48,6 +48,13 @@ In this example our IP address is 10.5.0.135 and the interface name is wlan0. Th
 cd man-in-the-middle/
 sudo ./setup.sh wlan0 10.5.0.180 10.5.0.190
 ```
+
+NOTE 1: The order of the targets is not relevant.
+
+NOTE 2: The IP addresses must belong to the same subnet as the attacker's computer. If you want to capture the traffic between a computer on the LAN and outbound connexions, you must specify the default gateway address as one of the targets.
+
+Now all traffic between targets pass through our computer and can be caught by a sniffer program such as Wireshark.
+
 ## 3. Stop attack
 
 Press Ctrl + c or close the shell window.
