@@ -5,7 +5,7 @@ if [ "$(id -u)" -ne 0 ]
 fi
 
 if [ $# == 0 ]
-	then echo "Execute sudo ./setup.sh [interface] [target 1] [target 2]"
+	then echo "Execute sudo ./hack.sh [interface] [target 1] [target 2]"
 	exit 2
 fi
 

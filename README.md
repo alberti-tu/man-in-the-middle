@@ -12,7 +12,7 @@ sudo apt-get update
 sudo apt-get install dsniff
 
 cd man-in-the-middle/
-chmod +x setup.sh
+chmod +x hack.sh
 ```
 
 ## 2. Start attack
@@ -21,7 +21,7 @@ Open folder and execute the shell script.
 
 ```
 cd man-in-the-middle/
-sudo ./setup.sh [interface] [target 1] [target 2]
+sudo ./hack.sh [interface] [target 1] [target 2]
 ```
 
 ### 2.1 Example
@@ -46,7 +46,7 @@ In this example our IP address is 10.5.0.135 and the interface name is wlan0. Th
 
 ```
 cd man-in-the-middle/
-sudo ./setup.sh wlan0 10.5.0.180 10.5.0.190
+sudo ./hack.sh wlan0 10.5.0.180 10.5.0.190
 ```
 
 NOTE 1: The order of the targets is not relevant.
