@@ -10,9 +10,6 @@ The attack uses the arpspoof program that can be found in the dsniff package. Yo
 ```
 sudo apt-get update
 sudo apt-get install dsniff
-
-cd man-in-the-middle/
-chmod +x hack.sh
 ```
 
 ## 2. Start attack
