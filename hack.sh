@@ -1,22 +1,22 @@
 #!/bin/bash
-if [ $(id -u) != 0 ] ; then
+if [ "$(id -u)" != 0 ] ; then
 	echo "Please run as root"
 	exit 1
 fi
 
-if [ $# == 0 ]
-	then echo "Execute sudo ./hack.sh [interface] [target 1] [target 2]"
+if [ "$#" == 0 ] ; then
+	echo "Execute sudo ./hack.sh [interface] [target 1] [target 2]"
 	exit 2
 fi
 
-if [ $# != 3 ]
-	then echo "Invalid number of arguments"
+if [ "$#" != 3 ] ; then
+	echo "Invalid number of arguments"
 	echo "[interface] [target 1] [target 2]"
 	exit 3
 fi
 
-if [ $2 == $3 ]
-	then echo "Target 1 and Target 2 must have different"
+if [ "$2" == "$3" ] ; then
+	echo "Target 1 and Target 2 must have different"
 	exit 4
 fi
 
